@@ -1,0 +1,1 @@
+INSERT INTO skins (file_path) VALUES ('steve.png')

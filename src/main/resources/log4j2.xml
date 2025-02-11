@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="logdir">C:\Users\Abobones\log</Property>
+        <Property name="layout">%d [%t] %-5p %c- %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="LOCALHOST"
+                     fileName="${logdir}/intercraft.log"
+                     filePattern="${logdir}/intercraft.%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${layout}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="LOCALHOST"/>
+        </Root>
+    </Loggers>
+</Configuration>
